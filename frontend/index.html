@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego de Lógica - Niveles</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="overlay" class="overlay">
+  <h2 id="level-text">Nivel 1</h2>
+</div>
+
+<h1>Juego de Lógica: Encuentra los pares</h1>
+
+<div class="info">
+  <p id="level">Nivel: 1</p>
+  <p id="lives">Vidas: 3</p>
+  <p id="timer">Tiempo: 0s</p>
+</div>
+
+<div id="game-board" class="grid-cards"></div>
+
+<button id="restart" class="button">Reiniciar Juego</button>
+
+<canvas id="particles"></canvas>
+
+<audio id="match-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+<audio id="fail-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+<audio id="levelup-sound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
