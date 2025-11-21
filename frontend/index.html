@@ -3,32 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juego de Lógica - Niveles</title>
+<title>Juego de Lógica - Memorama Full Stack</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="overlay" class="overlay">
-  <h2 id="level-text">Nivel 1</h2>
+  <h2 id="level-text">Nivel 1</h2>
+    <!-- Contenedor para botones de Game Over -->
+    <div id="game-over-buttons" class="menu-buttons hidden">
+        <button id="restart-overlay" class="button">Volver a Jugar</button>
+        <button id="menu-overlay" class="button secondary">Volver al Menú</button>
+    </div>
 </div>
 
 <h1>Juego de Lógica: Encuentra los pares</h1>
 
-<div class="info">
-  <p id="level">Nivel: 1</p>
-  <p id="lives">Vidas: 3</p>
-  <p id="timer">Tiempo: 0s</p>
+<!-- === PANTALLA DE MENÚ INICIAL === -->
+<div id="main-menu" class="menu-screen">
+    <h2>Bienvenido a Memorama</h2>
+    <p>Mejora tu concentración y memoria visual.</p>
+    <div class="menu-buttons">
+        <button id="start-game" class="button">Iniciar Juego</button>
+        <button id="show-ranking" class="button secondary">Mostrar Marcador</button>
+    </div>
 </div>
+<!-- ================================ -->
 
-<div id="game-board" class="grid-cards"></div>
+<div class="main-container">
 
-<button id="restart" class="button">Reiniciar Juego</button>
+    <!-- Sección de Juego (oculta al inicio) -->
+    <div id="game-section" class="hidden">
+        
+        <div class="info-bar">
+            <p id="level">Nivel: 1</p>
+            <p id="lives">Vidas: 3</p>
+            <p id="timer">Tiempo: 0s</p>
+            <p id="current-score">Puntaje: 0</p>
+        </div>
+
+        <div id="game-board" class="grid-cards"></div>
+
+        <button id="restart" class="button">Reiniciar Juego</button>
+    </div>
+
+    <!-- === INTEGRACIÓN DEL RANKING === -->
+    <div id="ranking-container" class="ranking-panel hidden">
+        <!-- El ranking Top 10 se cargará aquí vía script.js -->
+        <h3>🏆 Top 10 Memorama</h3>
+        <button id="hide-ranking" class="button secondary">Volver al Menú</button>
+    </div>
+    <!-- ================================ -->
+
+</div>
 
 <canvas id="particles"></canvas>
 
-<audio id="match-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
-<audio id="fail-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
-<audio id="levelup-sound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+<!-- Elementos de Audio - Se asume que los archivos están en /frontend/sounds/ -->
+<audio id="match-sound" src="sounds/button-10.mp3"></audio>
+<audio id="fail-sound" src="sounds/button-16.mp3"></audio>
+<audio id="levelup-sound" src="sounds/button-3.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
